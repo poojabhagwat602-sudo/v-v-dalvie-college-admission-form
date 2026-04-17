@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalvie College Admissions</title>
+
+<style>
+
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f6f8fb;
+    color: #1f2937;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #1e3a8a, #f97316);
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('college.jpg') center/cover no-repeat;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 { font-size: 42px; }
+.hero p { font-size: 18px; margin-top: 10px; }
+
+.btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #f97316;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* SECTION */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #1e3a8a;
+}
+
+.sub {
+    text-align: center;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #fff7ed;
+}
+
+/* INFO BOX */
+.info-box {
+    display: none;
+    background: white;
+    padding: 22px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #f97316;
+    line-height: 1.6;
+}
+
+/* FORM */
+.form-box {
+    background: white;
+    max-width: 450px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    Vijayalakshmi Vishwanath Dalvie College(Model College)
+</header>
+
+<div class="hero">
+    <h1>Admissions Open 2026</h1>
+    <p>Build your future with quality education & strong career opportunities</p>
+    <button class="btn" onclick="document.getElementById('apply').scrollIntoView()">
+        Apply Now / अर्ज करा
+    </button>
+</div>
+
+<!-- WHY CHOOSE -->
+<section>
+    <h2>Why Choose Us</h2>
+    <div class="sub">महाविद्यालय का निवडावे?</div>
+
+    <div class="grid">
+        <div class="card" onclick="showWhy('faculty')">Experienced Faculty</div>
+        <div class="card" onclick="showWhy('skill')">Skill Development</div>
+        <div class="card" onclick="showWhy('placement')">Placement Support</div>
+        <div class="card" onclick="showWhy('campus')">Modern Campus</div>
+    </div>
+
+    <div id="whyInfo" class="info-box"></div>
+</section>
+
+<!-- COURSES -->
+<section>
+    <h2>Courses Offered</h2>
+    <div class="sub">कोर्स निवडा</div>
+
+    <div class="grid">
+        <div class="card" onclick="showCourse('bscit')">B.Sc IT</div>
+        <div class="card" onclick="showCourse('bcom')">B.Com</div>
+        <div class="card" onclick="showCourse('baf')">BAF</div>
+        <div class="card" onclick="showCourse('bbi')">BBI</div>
+        <div class="card" onclick="showCourse('bms')">BMS</div>
+        <div class="card" onclick="showCourse('ba')">BA</div>
+        <div class="card" onclick="showCourse('bammc')">BAMMC</div>
+    </div>
+
+    <div id="info" class="info-box"></div>
+</section>
+
+<!-- FORM -->
+<section id="apply">
+    <h2>Admission Form</h2>
+    <div class="sub">प्रवेश अर्ज भरा</div>
+
+    <div class="form-box">
+        <form action="https://formsubmit.co/poojabhagwat602@gmail.com" method="POST">
+
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+
+            <select>
+                <option>B.Sc IT</option>
+                <option>B.Com</option>
+                <option>BAF</option>
+                <option>BBI</option>
+                <option>BMS</option>
+                <option>BA</option>
+                <option>BAMMC</option>
+            </select>
+
+            <textarea rows="4" placeholder="Message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 Dalvie College | Talere, Maharashtra
+</footer>
+
+<script>
+
+/* WHY CHOOSE */
+function showWhy(t) {
+    document.getElementById("whyInfo").style.display = "block";
+
+    const data = {
+        faculty: `
+        <h3>Experienced Faculty</h3>
+        1. Highly qualified teachers with industry experience<br>
+        2. Personalized student guidance<br>
+        3. Concept-based learning<br><br>
+
+        <b>मराठी:</b> अनुभवी शिक्षक व मार्गदर्शन
+        `,
+
+        skill: `
+        <h3>Skill Development</h3>
+        1. Communication training<br>
+        2. Internship opportunities<br>
+        3. Personality development<br><br>
+
+        <b>मराठी:</b> कौशल्य विकास
+        `,
+
+        placement: `
+        <h3>Placement Support</h3>
+        1. Job interviews<br>
+        2. Resume building<br>
+        3. Company tie-ups<br><br>
+
+        <b>मराठी:</b> नोकरी सहाय्य
+        `,
+
+        campus: `
+        <h3>Modern Campus</h3>
+        1. Smart classrooms<br>
+        2. Library<br>
+        3. WiFi campus<br><br>
+
+        <b>मराठी:</b> आधुनिक सुविधा
+        `
+    };
+
+    document.getElementById("whyInfo").innerHTML = data[t];
+}
+
+/* COURSES */
+function showCourse(c) {
+    document.getElementById("info").style.display = "block";
+
+    const data = {
+
+        bscit: `
+        <h3>B.Sc IT</h3>
+        Eligibility: 12th Science/Commerce<br>
+        Future Scope: Software Developer, Web Developer, Data Analyst<br>
+        Skills: Coding, Programming<br><br>
+        <b>मराठी:</b> IT क्षेत्र
+        `,
+
+        bcom: `
+        <h3>B.Com</h3>
+        Eligibility: 12th any stream<br>
+        Future Scope: CA, Accountant, Banker<br>
+        Skills: Finance, Accounting<br><br>
+        <b>मराठी:</b> व्यवसाय
+        `,
+
+        baf: `
+        <h3>BAF</h3>
+        Eligibility: 12th Commerce<br>
+        Future Scope: Finance Manager, Auditor<br>
+        Skills: Accounting<br><br>
+        <b>मराठी:</b> फायनान्स
+        `,
+
+        bbi: `
+        <h3>BBI</h3>
+        Eligibility: 12th Commerce<br>
+        Future Scope: Bank Officer<br>
+        Skills: Banking<br><br>
+        <b>मराठी:</b> बँकिंग
+        `,
+
+        bms: `
+        <h3>BMS</h3>
+        Eligibility: 12th any stream<br>
+        Future Scope: Manager, HR<br>
+        Skills: Leadership<br><br>
+        <b>मराठी:</b> मॅनेजमेंट
+        `,
+
+        ba: `
+        <h3>BA</h3>
+        Eligibility: 12th any stream<br>
+        Future Scope: IAS, Teacher<br>
+        Skills: Writing<br><br>
+        <b>मराठी:</b> सरकारी नोकरी
+        `,
+
+        bammc: `
+        <h3>BAMMC</h3>
+        Eligibility: 12th any stream<br>
+        Future Scope: Media Jobs<br>
+        Skills: Communication<br><br>
+        <b>मराठी:</b> मीडिया
+        `
+    };
+
+    document.getElementById("info").innerHTML = data[c];
+}
+
+</script>
+
+</body>
+</html>
